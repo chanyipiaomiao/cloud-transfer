@@ -1,0 +1,27 @@
+release:
+  github:
+    owner: chanyipiaomiao
+    name: cloud-transfer
+  name_template: '{{.Tag}}'
+  draft: true
+builds:
+  - main: main.go
+    binary: cloud-transfer
+    goos:
+      - darwin
+      - linux
+    goarch:
+      - amd64
+      - 386
+  - ldflags: -s -w -X "cloud-transfer/main.BuildDate={{.Date}}" -X "cloud-transfer/main.CommitHash={{.Commit}}" -X "cloud-transfer/main.AppVersion={{.Version}}" -X "cloud-transfer/main.GoVersion={{.Env.GO_VERSION}}"
+archive:
+  format: tar.gz
+  wrap_in_directory: true
+  replacements:
+    amd64: 64-bit
+    darwin: macos
+    linux: linux
+  files:
+    - LICENSE
+    - README.md
+    - app.conf
