@@ -11,7 +11,7 @@
 
 ## 安装
 
-直接下载即可
+直接[**下载**](https://github.com/chanyipiaomiao/cloud-transfer/releases)即可
 
 ## 使用说明
 
