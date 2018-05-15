@@ -5,7 +5,7 @@ release:
   name_template: '{{.Tag}}'
   draft: true
 builds:
-  - main: *.go
+  - main: ./...
     binary: cloud-transfer
     goos:
       - darwin

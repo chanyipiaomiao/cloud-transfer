@@ -17,7 +17,7 @@ var (
 	CommitHash = ""
 
 	// BuildDate 编译日期
-	BuildDate = "2018-04-09"
+	BuildDate = "2018-05-15"
 
 	// Author 作者
 	Author = "helei"
