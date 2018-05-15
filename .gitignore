@@ -18,3 +18,4 @@ logs
 temp
 .vagrant
 rsa*
+dist

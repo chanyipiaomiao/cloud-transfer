@@ -13,7 +13,7 @@ builds:
     goarch:
       - amd64
       - 386
-  - ldflags: -s -w -X "cloud-transfer/main.BuildDate={{.Date}}" -X "cloud-transfer/main.CommitHash={{.Commit}}" -X "cloud-transfer/main.AppVersion={{.Version}}" -X "cloud-transfer/main.GoVersion={{.Env.GO_VERSION}}"
+  - ldflags: -s -w -X "main.BuildDate={{.Date}}" -X "main.CommitHash={{.Commit}}" -X "main.AppVersion={{.Version}}" -X "main.GoVersion={{.Env.GO_VERSION}}"
 archive:
   format: tar.gz
   wrap_in_directory: true
