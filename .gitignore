@@ -19,3 +19,4 @@ temp
 .vagrant
 rsa*
 dist
+.idea
