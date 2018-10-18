@@ -7,7 +7,6 @@ import (
 	"os"
 	"time"
 
-	"github.com/chanyipiaomiao/hltool"
 	"github.com/pkg/sftp"
 	"golang.org/x/crypto/ssh"
 )
@@ -22,17 +21,15 @@ type SSHConfig struct {
 
 // GetKeyFile 得到用户的私钥
 func GetKeyFile(username string) (ssh.AuthMethod, error) {
-	home, err := hltool.UserHome()
-	if err != nil {
-		return nil, fmt.Errorf("Get hltool.UserHome() error: %s", err)
+
+	var home string
+
+	if username == "root" {
+		home = "/root"
+	} else {
+		home = "/home/" + username
 	}
-	if "" == home {
-		if username == "root" {
-			home = "/root"
-		} else {
-			home = "/home/" + username
-		}
-	}
+
 	privateKey := home + "/.ssh/id_rsa"
 	buffer, err := ioutil.ReadFile(privateKey)
 	if err != nil {
